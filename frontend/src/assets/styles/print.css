@@ -1,0 +1,269 @@
+/**
+ * 打印样式优化
+ * 用于论文详情、笔记等页面的打印优化
+ */
+
+@media print {
+  /* 隐藏不需要打印的元素 */
+  .no-print,
+  .ant-layout-sider,
+  .ant-layout-header,
+  .site-layout-header,
+  .ant-btn,
+  .ant-tabs-nav,
+  button,
+  .ant-back-top,
+  .ant-modal-mask,
+  .ant-modal-wrap {
+    display: none !important;
+  }
+
+  /* 页面布局优化 */
+  body {
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  .site-layout-content,
+  .content-wrapper {
+    margin: 0 !important;
+    padding: 20px !important;
+  }
+
+  /* 论文详情打印样式 */
+  .paper-detail-print {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .paper-detail-print .ant-card {
+    border: none !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  .paper-detail-print .ant-descriptions-item-label {
+    font-weight: bold;
+    color: #000 !important;
+  }
+
+  .paper-detail-print .ant-descriptions-item-content {
+    color: #333 !important;
+  }
+
+  /* 标签打印样式 */
+  .ant-tag {
+    border: 1px solid #d9d9d9 !important;
+    background: white !important;
+    color: #000 !important;
+    page-break-inside: avoid;
+  }
+
+  /* 笔记打印样式 */
+  .note-print {
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e8e8e8;
+  }
+
+  .note-print-header {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+  }
+
+  .note-print-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .note-print-meta {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .note-print-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000;
+  }
+
+  /* Markdown内容打印优化 */
+  .note-print-content h1,
+  .note-print-content h2,
+  .note-print-content h3 {
+    page-break-after: avoid;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .note-print-content h1 {
+    font-size: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+  }
+
+  .note-print-content h2 {
+    font-size: 18px;
+  }
+
+  .note-print-content h3 {
+    font-size: 16px;
+  }
+
+  .note-print-content p {
+    margin-bottom: 10px;
+  }
+
+  .note-print-content code {
+    background: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    padding: 2px 5px;
+    font-family: 'Courier New', monospace;
+  }
+
+  .note-print-content pre {
+    background: #f5f5f5;
+    border: 1px solid #d9d9d9;
+    padding: 10px;
+    overflow: visible;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .note-print-content ul,
+  .note-print-content ol {
+    margin-left: 20px;
+  }
+
+  .note-print-content li {
+    margin-bottom: 5px;
+  }
+
+  /* 表格打印优化 */
+  .note-print-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+  }
+
+  .note-print-content table th,
+  .note-print-content table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .note-print-content table th {
+    background: #f0f0f0;
+    font-weight: bold;
+  }
+
+  /* 图片打印优化 */
+  .note-print-content img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* 分页控制 */
+  .page-break-before {
+    page-break-before: always;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+
+  .no-page-break {
+    page-break-inside: avoid;
+  }
+
+  /* 进度条打印样式 */
+  .ant-progress {
+    page-break-inside: avoid;
+  }
+
+  .ant-progress-text {
+    color: #000 !important;
+  }
+
+  /* 列表打印样式 */
+  .ant-list-item {
+    page-break-inside: avoid;
+    border-color: #d9d9d9 !important;
+  }
+
+  /* 卡片打印样式 */
+  .ant-card-head {
+    background: #f5f5f5 !important;
+    border-bottom: 2px solid #000 !important;
+  }
+
+  .ant-card-head-title {
+    color: #000 !important;
+    font-weight: bold;
+  }
+
+  /* 页眉页脚 */
+  @page {
+    margin: 2cm;
+  }
+
+  /* 首页信息 */
+  .print-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #000;
+  }
+
+  .print-header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .print-header .print-date {
+    font-size: 12px;
+    color: #666;
+  }
+
+  /* 参考文献打印样式 */
+  .reference-print {
+    page-break-inside: avoid;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fafafa;
+    border-left: 3px solid #000;
+  }
+
+  .reference-print-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .reference-print-authors {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+
+  .reference-print-journal {
+    color: #333;
+  }
+}
+
+/* 打印预览样式（在屏幕上也显示，用于预览） */
+.print-preview-mode {
+  background: white;
+  max-width: 21cm;
+  margin: 20px auto;
+  padding: 2cm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.print-preview-mode .no-print {
+  display: none;
+}

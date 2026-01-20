@@ -1,0 +1,232 @@
+/**
+ * 现代学术风格 - 增强样式
+ * 为特定组件和页面提供额外的视觉优化
+ */
+
+/* ==================== 统计卡片增强 ==================== */
+
+/* 为Dashboard等页面的统计卡片添加渐变背景 */
+.ant-statistic-card,
+.dashboard-stat-card {
+  border-radius: 12px !important;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 统计卡片悬停效果 */
+.ant-statistic-card:hover,
+.dashboard-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* ==================== 表格增强 ==================== */
+
+/* 表格头部优化 */
+.ant-table-thead > tr > th {
+  background: linear-gradient(180deg, #fafbfc 0%, #f5f7fa 100%) !important;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 2px solid #e8ecf1 !important;
+}
+
+/* 表格行悬停效果 */
+.ant-table-tbody > tr:hover > td {
+  background: rgba(24, 144, 255, 0.04) !important;
+}
+
+/* 表格选中行 */
+.ant-table-tbody > tr.ant-table-row-selected > td {
+  background: rgba(24, 144, 255, 0.08) !important;
+}
+
+/* ==================== 标签增强 ==================== */
+
+/* 标签样式优化 */
+.ant-tag {
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  border: none;
+  font-weight: 500;
+}
+
+/* ==================== 按钮增强 ==================== */
+
+/* 主要按钮 */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  border: none;
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+  box-shadow: 0 4px 8px rgba(24, 144, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* 成功按钮 */
+.ant-btn-success,
+.ant-btn[style*="background: rgb(82, 196, 26)"] {
+  background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%) !important;
+  border: none;
+  box-shadow: 0 2px 4px rgba(82, 196, 26, 0.3);
+}
+
+/* 警告按钮 */
+.ant-btn-warning,
+.ant-btn[style*="background: rgb(250, 173, 20)"] {
+  background: linear-gradient(135deg, #faad14 0%, #d48806 100%) !important;
+  border: none;
+  box-shadow: 0 2px 4px rgba(250, 173, 20, 0.3);
+}
+
+/* ==================== 输入框增强 ==================== */
+
+/* 输入框聚焦效果 */
+.ant-input:focus,
+.ant-input-focused,
+.ant-select-focused .ant-select-selector {
+  border-color: #1890ff !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1) !important;
+}
+
+/* ==================== 模态框增强 ==================== */
+
+/* 模态框背景模糊 */
+.ant-modal-mask {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* 模态框样式 */
+.ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* 模态框头部 */
+.ant-modal-header {
+  background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+  border-bottom: 1px solid #e8ecf1;
+}
+
+/* ==================== 消息提示增强 ==================== */
+
+/* 成功消息 */
+.ant-message-success .ant-message-notice-content {
+  background: linear-gradient(135deg, #f6ffed 0%, #d9f7be 100%);
+  border-left: 4px solid #52c41a;
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.15);
+}
+
+/* 错误消息 */
+.ant-message-error .ant-message-notice-content {
+  background: linear-gradient(135deg, #fff2f0 0%, #ffccc7 100%);
+  border-left: 4px solid #ff4d4f;
+  box-shadow: 0 4px 12px rgba(255, 77, 79, 0.15);
+}
+
+/* 警告消息 */
+.ant-message-warning .ant-message-notice-content {
+  background: linear-gradient(135deg, #fffbe6 0%, #fff1b8 100%);
+  border-left: 4px solid #faad14;
+  box-shadow: 0 4px 12px rgba(250, 173, 20, 0.15);
+}
+
+/* 信息消息 */
+.ant-message-info .ant-message-notice-content {
+  background: linear-gradient(135deg, #e6f7ff 0%, #bae7ff 100%);
+  border-left: 4px solid #1890ff;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15);
+}
+
+/* ==================== 加载动画增强 ==================== */
+
+/* Spin加载动画 */
+.ant-spin-dot-item {
+  background-color: #1890ff;
+}
+
+/* ==================== 面包屑增强 ==================== */
+
+.ant-breadcrumb {
+  padding: 12px 0;
+  font-size: 14px;
+}
+
+.ant-breadcrumb a {
+  color: #1890ff;
+  transition: all 0.3s;
+}
+
+.ant-breadcrumb a:hover {
+  color: #40a9ff;
+  text-decoration: underline;
+}
+
+/* ==================== 分页增强 ==================== */
+
+.ant-pagination-item-active {
+  border-color: #1890ff;
+  background: linear-gradient(135deg, #e6f7ff 0%, #bae7ff 100%);
+}
+
+.ant-pagination-item-active a {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+/* ==================== 进度条增强 ==================== */
+
+.ant-progress-bg {
+  background: linear-gradient(90deg, #1890ff 0%, #52c41a 100%);
+}
+
+/* ==================== 工具提示增强 ==================== */
+
+.ant-tooltip-inner {
+  background: rgba(31, 41, 55, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== 响应式优化 ==================== */
+
+@media (max-width: 768px) {
+  /* 移动端按钮稍小 */
+  .ant-btn {
+    padding: 4px 12px;
+    font-size: 13px;
+  }
+
+  /* 移动端卡片圆角减小 */
+  .ant-card {
+    border-radius: 6px;
+  }
+
+  /* 移动端取消悬停效果 */
+  .ant-card:hover {
+    transform: none;
+  }
+}
+
+/* ==================== 打印样式 ==================== */
+
+@media print {
+  /* 打印时隐藏装饰元素 */
+  .background-decoration {
+    display: none !important;
+  }
+
+  /* 打印时简化阴影 */
+  .ant-card {
+    box-shadow: none !important;
+    border: 1px solid #e8ecf1 !important;
+  }
+}

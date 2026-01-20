@@ -1,0 +1,216 @@
+/**
+ * 用户引导Tour样式
+ */
+
+/* ===== Tour指示器 ===== */
+.tour-indicators {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(24, 144, 255, 0.1);
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1890ff;
+}
+
+/* ===== Tour内容样式 ===== */
+.ant-tour-content {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ant-tour-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* ===== Tour按钮 ===== */
+.ant-tour-buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ===== 触发引导按钮 ===== */
+.trigger-tour-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.trigger-tour-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+.trigger-tour-btn:active {
+  transform: translateY(0);
+}
+
+.tour-icon {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  line-height: 1;
+}
+
+/* ===== Tour遮罩样式 ===== */
+.ant-tour-mask {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ===== Tour面板样式 ===== */
+.ant-tour-content {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+}
+
+.ant-tour-arrow {
+  display: block;
+}
+
+/* ===== Tour关闭按钮 ===== */
+.ant-tour-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #999;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.ant-tour-close:hover {
+  color: #333;
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+  .ant-tour-content {
+    max-width: calc(100vw - 48px);
+    padding: 16px;
+  }
+
+  .ant-tour-title {
+    font-size: 15px;
+  }
+
+  .ant-tour-content {
+    font-size: 13px;
+  }
+
+  .trigger-tour-btn {
+    width: 44px;
+    height: 44px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .tour-icon {
+    font-size: 20px;
+  }
+
+  .tour-indicators {
+    padding: 2px 8px;
+    font-size: 11px;
+  }
+}
+
+/* ===== 横屏适配 ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+  .trigger-tour-btn {
+    bottom: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .tour-icon {
+    font-size: 18px;
+  }
+
+  .ant-tour-content {
+    padding: 12px;
+  }
+}
+
+/* ===== 动画效果 ===== */
+@keyframes tourPulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.6);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+}
+
+.trigger-tour-btn {
+  animation: tourPulse 2s ease-in-out infinite;
+}
+
+/* ===== 暗色模式支持 ===== */
+@media (prefers-color-scheme: dark) {
+  .ant-tour-content {
+    background: #1f1f1f;
+    color: #e0e0e0;
+  }
+
+  .ant-tour-title {
+    color: #f0f0f0;
+  }
+
+  .ant-tour-close {
+    color: #999;
+  }
+
+  .ant-tour-close:hover {
+    color: #e0e0e0;
+  }
+
+  .tour-indicators {
+    background: rgba(24, 144, 255, 0.2);
+    color: #4da3ff;
+  }
+}
+
+/* ===== 辅助功能优化 ===== */
+.trigger-tour-btn:focus-visible {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+/* ===== Tour步骤高亮效果 ===== */
+.ant-tour-target-placeholder {
+  border: 2px solid #1890ff !important;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px rgba(24, 144, 255, 0.2);
+  animation: tourHighlight 1.5s ease-in-out infinite;
+}
+
+@keyframes tourHighlight {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(24, 144, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(24, 144, 255, 0.1);
+  }
+}

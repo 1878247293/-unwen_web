@@ -1,0 +1,175 @@
+.empty-state-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  padding: 40px 20px;
+}
+
+.empty-state-content {
+  text-align: center;
+  max-width: 500px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-illustration {
+  position: relative;
+  margin-bottom: 32px;
+  display: inline-block;
+}
+
+.empty-icon {
+  font-size: 120px;
+  color: #d9d9d9;
+  position: relative;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 动画圆圈 */
+.empty-animation-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border: 3px solid rgba(24, 144, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+.empty-animation-circle.delay-1 {
+  width: 120px;
+  height: 120px;
+  animation-delay: 0.3s;
+  border-color: rgba(24, 144, 255, 0.15);
+}
+
+.empty-animation-circle.delay-2 {
+  width: 160px;
+  height: 160px;
+  animation-delay: 0.6s;
+  border-color: rgba(24, 144, 255, 0.1);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.empty-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 12px;
+  animation: fadeIn 0.6s ease-out 0.2s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.empty-description {
+  font-size: 16px;
+  color: #8c8c8c;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  animation: fadeIn 0.6s ease-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.empty-action-button {
+  height: 44px;
+  padding: 0 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+  animation: fadeInUp 0.6s ease-out 0.6s;
+  animation-fill-mode: both;
+  transition: all 0.3s ease;
+}
+
+.empty-action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(24, 144, 255, 0.4);
+}
+
+.empty-action-button:active {
+  transform: translateY(0);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .empty-state-container {
+    min-height: 300px;
+    padding: 30px 15px;
+  }
+
+  .empty-icon {
+    font-size: 80px;
+  }
+
+  .empty-animation-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .empty-animation-circle.delay-1 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .empty-animation-circle.delay-2 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .empty-title {
+    font-size: 20px;
+  }
+
+  .empty-description {
+    font-size: 14px;
+  }
+
+  .empty-action-button {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 24px;
+  }
+}

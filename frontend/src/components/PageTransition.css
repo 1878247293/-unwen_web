@@ -1,0 +1,155 @@
+/**
+ * 页面切换动画样式
+ * 支持多种过渡效果：淡入淡出、滑动、缩放
+ */
+
+/* ===== 通用包装器 ===== */
+.page-transition-wrapper {
+  width: 100%;
+}
+
+/* ===== 淡入淡出 ===== */
+.page-transition-fade-enter {
+  opacity: 0;
+}
+
+.page-transition-fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.page-transition-fade-exit {
+  opacity: 1;
+}
+
+.page-transition-fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+/* ===== 左滑入 ===== */
+.page-transition-slide-left-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.page-transition-slide-left-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}
+
+.page-transition-slide-left-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.page-transition-slide-left-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* ===== 右滑入 ===== */
+.page-transition-slide-right-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.page-transition-slide-right-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}
+
+.page-transition-slide-right-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.page-transition-slide-right-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* ===== 上滑入 ===== */
+.page-transition-slide-up-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.page-transition-slide-up-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}
+
+.page-transition-slide-up-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-slide-up-exit-active {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* ===== 缩放 ===== */
+.page-transition-zoom-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.page-transition-zoom-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}
+
+.page-transition-zoom-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-transition-zoom-exit-active {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* ===== 响应式优化 ===== */
+@media (max-width: 768px) {
+  /* 移动端减弱动画效果，提升性能 */
+  .page-transition-slide-left-enter,
+  .page-transition-slide-left-exit-active {
+    transform: translateX(50%) !important;
+  }
+
+  .page-transition-slide-right-enter,
+  .page-transition-slide-right-exit-active {
+    transform: translateX(-50%) !important;
+  }
+
+  .page-transition-slide-up-enter,
+  .page-transition-slide-up-exit-active {
+    transform: translateY(20px) !important;
+  }
+}
+
+/* ===== 用户偏好：减少动画 ===== */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-fade-enter-active,
+  .page-transition-fade-exit-active,
+  .page-transition-slide-left-enter-active,
+  .page-transition-slide-left-exit-active,
+  .page-transition-slide-right-enter-active,
+  .page-transition-slide-right-exit-active,
+  .page-transition-slide-up-enter-active,
+  .page-transition-slide-up-exit-active,
+  .page-transition-zoom-enter-active,
+  .page-transition-zoom-exit-active {
+    transition: none !important;
+  }
+}

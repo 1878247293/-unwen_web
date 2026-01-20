@@ -1,0 +1,516 @@
+/**
+ * 响应式布局优化样式
+ * 针对不同屏幕尺寸提供优化的布局
+ */
+
+/* ===== 断点定义 ===== */
+/*
+  xs: < 576px  (手机竖屏)
+  sm: 576px - 768px (手机横屏 / 小平板)
+  md: 768px - 992px (平板)
+  lg: 992px - 1200px (小桌面)
+  xl: 1200px - 1600px (桌面)
+  xxl: > 1600px (大屏)
+*/
+
+/* ===== 全局响应式优化 ===== */
+
+/* 移动端基础优化 */
+@media (max-width: 768px) {
+  /* 字体大小优化 */
+  html {
+    font-size: 14px;
+  }
+
+  /* 容器内边距优化 */
+  .ant-layout-content {
+    padding: 12px !important;
+  }
+
+  /* 卡片内边距优化 */
+  .ant-card {
+    margin-bottom: 12px;
+  }
+
+  .ant-card-body {
+    padding: 16px !important;
+  }
+
+  /* 表格优化 */
+  .ant-table-wrapper {
+    overflow-x: auto;
+  }
+
+  /* 表单优化 */
+  .ant-form-item {
+    margin-bottom: 16px;
+  }
+
+  /* 按钮组优化 */
+  .ant-space {
+    flex-wrap: wrap !important;
+  }
+
+  /* 模态框优化 */
+  .ant-modal {
+    max-width: calc(100vw - 32px);
+    margin: 16px auto;
+  }
+
+  .ant-modal-body {
+    padding: 16px;
+  }
+}
+
+/* ===== Layout布局响应式 ===== */
+
+/* 侧边栏响应式 */
+@media (max-width: 992px) {
+  .ant-layout-sider {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+
+  .ant-layout-sider-collapsed {
+    transform: translateX(-100%);
+  }
+
+  /* 添加遮罩层 */
+  .ant-layout-sider:not(.ant-layout-sider-collapsed)::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+  }
+
+  /* 内容区域调整 */
+  .ant-layout-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Header响应式 */
+@media (max-width: 768px) {
+  .ant-layout-header {
+    padding: 0 12px !important;
+  }
+
+  .ant-layout-header .ant-menu-horizontal {
+    border-bottom: none;
+  }
+
+  .ant-layout-header .header-title {
+    font-size: 16px !important;
+  }
+
+  .ant-layout-header .header-user {
+    font-size: 14px !important;
+  }
+}
+
+/* ===== 论文列表响应式 ===== */
+@media (max-width: 768px) {
+  /* 搜索栏优化 */
+  .papers-search-bar {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .papers-search-bar .ant-input-search {
+    width: 100% !important;
+  }
+
+  .papers-search-bar .ant-select,
+  .papers-search-bar .ant-btn {
+    width: 100% !important;
+  }
+
+  /* 表格转卡片布局 */
+  .ant-table-wrapper .ant-table {
+    display: none;
+  }
+
+  .papers-mobile-cards {
+    display: block !important;
+  }
+
+  .paper-mobile-card {
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  .paper-mobile-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1890ff;
+  }
+
+  .paper-mobile-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #666;
+  }
+
+  .paper-mobile-card-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .paper-mobile-card-actions .ant-btn {
+    flex: 1;
+    min-width: 80px;
+  }
+}
+
+/* 桌面端隐藏移动卡片 */
+@media (min-width: 769px) {
+  .papers-mobile-cards {
+    display: none !important;
+  }
+}
+
+/* ===== 论文详情响应式 ===== */
+@media (max-width: 768px) {
+  .paper-detail-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .paper-detail-title {
+    font-size: 20px !important;
+  }
+
+  .paper-detail-meta {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .paper-detail-actions {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+
+  .paper-detail-actions .ant-btn {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  /* Tabs优化 */
+  .ant-tabs-nav {
+    padding: 0 !important;
+  }
+
+  .ant-tabs-tab {
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* ===== Dashboard响应式 ===== */
+@media (max-width: 768px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .dashboard-charts {
+    grid-template-columns: 1fr !important;
+  }
+
+  .stat-card {
+    padding: 16px !important;
+  }
+
+  .stat-value {
+    font-size: 28px !important;
+  }
+}
+
+/* ===== 表单响应式 ===== */
+@media (max-width: 768px) {
+  /* 表单布局优化 */
+  .ant-form-horizontal .ant-form-item-label {
+    text-align: left !important;
+    padding-bottom: 4px;
+  }
+
+  .ant-form-item-label > label {
+    height: auto !important;
+  }
+
+  /* 双列表单改为单列 */
+  .ant-row[gutter] > .ant-col {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 按钮组垂直排列 */
+  .ant-form-item-control .ant-btn {
+    width: 100% !important;
+    margin-bottom: 8px;
+  }
+
+  .ant-form-item-control .ant-space {
+    width: 100%;
+  }
+
+  .ant-form-item-control .ant-space-item {
+    width: 100%;
+  }
+}
+
+/* ===== 标签管理响应式 ===== */
+@media (max-width: 768px) {
+  .tags-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .tags-actions {
+    width: 100%;
+  }
+
+  .tags-actions .ant-btn {
+    width: 100%;
+  }
+
+  /* 标签表格 */
+  .ant-table-wrapper .ant-table-thead > tr > th,
+  .ant-table-wrapper .ant-table-tbody > tr > td {
+    padding: 8px 4px !important;
+    font-size: 12px !important;
+  }
+
+  /* 隐藏次要列 */
+  .ant-table-wrapper .ant-table-tbody > tr > td:nth-child(3),
+  .ant-table-wrapper .ant-table-thead > tr > th:nth-child(3) {
+    display: none !important;
+  }
+}
+
+/* ===== 用户管理响应式 ===== */
+@media (max-width: 992px) {
+  .users-table .ant-table-tbody > tr > td:nth-child(4),
+  .users-table .ant-table-thead > tr > th:nth-child(4),
+  .users-table .ant-table-tbody > tr > td:nth-child(5),
+  .users-table .ant-table-thead > tr > th:nth-child(5) {
+    display: none !important;
+  }
+}
+
+/* ===== 笔记编辑器响应式 ===== */
+@media (max-width: 768px) {
+  .note-editor-container {
+    flex-direction: column !important;
+  }
+
+  .rc-md-editor {
+    height: 300px !important;
+  }
+
+  .note-preview {
+    max-height: 300px !important;
+    overflow-y: auto;
+  }
+}
+
+/* ===== 分页响应式 ===== */
+@media (max-width: 576px) {
+  .ant-pagination {
+    text-align: center !important;
+  }
+
+  .ant-pagination-options {
+    display: none !important;
+  }
+
+  .ant-pagination-item,
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    margin-right: 4px !important;
+  }
+
+  /* 只显示当前页和首尾页 */
+  .ant-pagination-item:not(.ant-pagination-item-active) {
+    display: none !important;
+  }
+
+  .ant-pagination-item:first-of-type,
+  .ant-pagination-item:last-of-type {
+    display: inline-block !important;
+  }
+}
+
+/* ===== 模态框响应式 ===== */
+@media (max-width: 576px) {
+  .ant-modal {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+  }
+
+  .ant-modal-content {
+    border-radius: 0 !important;
+    min-height: 100vh;
+  }
+
+  .ant-modal-header {
+    padding: 16px !important;
+  }
+
+  .ant-modal-body {
+    padding: 16px !important;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  .ant-modal-footer {
+    padding: 12px 16px !important;
+  }
+}
+
+/* ===== 空状态响应式 ===== */
+@media (max-width: 768px) {
+  .empty-state-container {
+    padding: 32px 16px !important;
+  }
+
+  .empty-illustration {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .empty-icon {
+    font-size: 48px !important;
+  }
+
+  .empty-title {
+    font-size: 18px !important;
+  }
+
+  .empty-description {
+    font-size: 14px !important;
+  }
+}
+
+/* ===== 触摸优化 ===== */
+@media (hover: none) and (pointer: coarse) {
+  /* 增大点击区域 */
+  .ant-btn {
+    min-height: 44px !important;
+    padding: 8px 16px !important;
+  }
+
+  .ant-menu-item {
+    line-height: 44px !important;
+    height: 44px !important;
+  }
+
+  .ant-checkbox-wrapper,
+  .ant-radio-wrapper {
+    padding: 8px 0 !important;
+  }
+
+  /* 禁用hover效果，使用active */
+  .ant-btn:hover,
+  .ant-menu-item:hover,
+  .paper-mobile-card:hover {
+    background: transparent !important;
+  }
+
+  .ant-btn:active {
+    opacity: 0.7;
+  }
+
+  /* 增大表单控件 */
+  .ant-input,
+  .ant-input-number,
+  .ant-select-selector {
+    min-height: 44px !important;
+  }
+}
+
+/* ===== 横屏适配 ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+  /* 减少垂直间距 */
+  .ant-layout-content {
+    padding: 8px !important;
+  }
+
+  .ant-card-body {
+    padding: 12px !important;
+  }
+
+  .ant-form-item {
+    margin-bottom: 12px !important;
+  }
+
+  /* 模态框适配 */
+  .ant-modal-body {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+}
+
+/* ===== 高分辨率屏幕优化 ===== */
+@media (min-width: 1600px) {
+  .ant-layout-content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* ===== 打印适配 ===== */
+@media print {
+  /* 隐藏交互元素 */
+  .ant-layout-sider,
+  .ant-layout-header,
+  .ant-btn,
+  .ant-pagination,
+  .no-print {
+    display: none !important;
+  }
+
+  /* 内容全宽 */
+  .ant-layout-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 优化打印样式 */
+  .ant-card {
+    border: none !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  /* 确保链接可见 */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 12px;
+    color: #666;
+  }
+}

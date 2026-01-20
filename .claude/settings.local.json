@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/init_db.py:*)",
+      "Bash(python3:*)",
+      "Bash(chmod:*)",
+      "Bash(ls:*)",
+      "Bash(source:*)",
+      "Bash(sqlite3:*)",
+      "Bash(python scripts/migrate_add_reading_features.py:*)",
+      "Bash(npm install:*)",
+      "Bash(grep:*)",
+      "Bash(python -m py_compile:*)",
+      "Bash(npm run build:*)",
+      "Bash(pkill:*)",
+      "Bash(python scripts/migrate_create_comments_table.py:*)",
+      "Bash(find:*)",
+      "Bash(python scripts/migrate_create_suggestions_table.py:*)",
+      "Bash(python scripts/migrate_create_notifications_table.py:*)",
+      "Bash(python scripts/migrate_create_ideas_table.py:*)",
+      "Bash(python -m uvicorn:*)",
+      "Bash(python:*)",
+      "Bash(pip3 install:*)",
+      "Bash(pip install:*)",
+      "Bash(tree:*)",
+      "Bash(wc:*)"
+    ]
+  }
+}
