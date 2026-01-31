@@ -1,0 +1,24 @@
+
+> paper-management-frontend@1.0.0 dev
+> vite
+
+
+  VITE v5.4.21  ready in 564 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://172.19.49.113:5173/
+9:52:40 PM [vite] hmr update /src/pages/Papers.jsx, /src/pages/Tags.jsx, /src/pages/AddPaper.jsx
+12:52:54 AM [vite] hmr update /src/pages/Papers.jsx, /src/pages/Tags.jsx, /src/pages/AddPaper.jsx
+9:41:58 PM [vite] hmr update /src/assets/styles/index.css
+9:42:24 PM [vite] hmr update /src/assets/styles/index.css
+9:43:03 PM [vite] hmr update /src/assets/styles/index.css
+9:43:48 PM [vite] hmr update /src/assets/styles/index.css
+9:46:10 PM [vite] hmr update /src/components/Layout.css
+9:53:27 PM [vite] hmr update /src/components/BackgroundDecoration.jsx
+9:54:32 PM [vite] hmr update /src/components/BackgroundDecoration.css
+9:55:32 PM [vite] hmr update /src/pages/Login.css
+9:56:35 PM [vite] hmr update /src/pages/Login.css
+9:57:24 PM [vite] hmr update /src/pages/Login.css
+9:58:45 PM [vite] hmr update /src/assets/styles/modern-academic-theme.css
+10:00:01 PM [vite] hmr update /src/assets/styles/modern-academic-theme.css
+10:01:38 PM [vite] hmr update /src/assets/styles/modern-academic-theme.css
